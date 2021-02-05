@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:ktrk115/ktrk115.github.io.git
