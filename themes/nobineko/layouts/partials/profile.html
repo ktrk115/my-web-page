@@ -1,0 +1,57 @@
+{{ $faEnabled := isset .Site.Params "fontawesomekit" }}
+{{ $profile:= $.Site.Params.profile }}
+
+<div class="text-center">
+    <img src={{ "profile.jpg" | absURL }} class="author_image mb-2">
+    <h1>{{ .Site.Title }}</h1>
+
+    <ul class="affiliation">
+        <li>
+            {{- if $faEnabled -}}
+            <i class="far fa-user me-1"></i>
+            {{- end -}}
+            {{ i18n "affiliation" }}
+        </li>
+        <li>
+            {{- if $faEnabled -}}
+            <i class="far fa-envelope me-1"></i>
+            {{- end -}}
+            {{ $profile.contact}}
+        </li>
+    </ul>
+
+    {{ $IconLinks := where $profile.link "icon" "!=" nil }}
+    {{ $IconLinks := cond $faEnabled $profile.link slice }}
+
+    {{- if gt (len $IconLinks) 0 -}}
+    <ul class="links icon_links">
+        {{- range $IconLinks -}}
+        <li>
+            <a href="{{ .url }}" title="{{ .name }}">
+                <i class="{{ .icon }} fa-2x"></i>
+            </a>
+        </li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{ $TextLinks := where $profile.link "icon" "==" nil }}
+    {{ $TextLinks := cond $faEnabled $TextLinks $profile.link }}
+    {{- if gt (len $TextLinks) 0 -}}
+    <ul class="links text_links">
+        {{- range $TextLinks -}}
+        <li>
+            <a href="{{ .url }}">
+                <span>[{{ .name }}]</span>
+            </a>
+        </li>
+        <li>
+        </li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+</div>
+
+<div class="biography">
+    <p>{{ i18n "biography" }}</p>
+</div>

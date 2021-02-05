@@ -1,0 +1,80 @@
+<div style="display: none;"><div class="bibtex_structure">
+    <div class="sections bibtextypekey">
+        <div class="section inproceedings">
+            <h3>{{ i18n "pub_reviewed" }}</h3>
+            <div class="sort year" extra="DESC number">
+                <table class="table table-hover table-borderless"><tbody class="templates"></tbody></table>
+            </div>
+        </div>
+        <div class="section techreport">
+            <h3>{{ i18n "pub_other" }}</h3>
+            <div class="sort year" extra="DESC number">
+                <table class="table table-hover table-borderless"><tbody class="templates"></tbody></table>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+<table style="display: none;">
+    <tbody>
+        <tr class="bibtex_template">
+            <td>
+                <span class="bullet">
+                    <i class="fas fa-square fa-sm"></i>
+                </span>
+            </td>
+            <td>
+                {{- if eq .Lang "ja" -}}
+                <span class="author" conjunction=", "></span> 
+                {{- else -}}
+                <span class="author"></span>
+                {{- end -}}.
+                {{ if ne .Lang "ja" }}<span class="year"></span>.{{ end }}
+                <span class="title"></span>.
+
+                {{- if ne .Lang "ja" -}}
+                <span class="if BIBTEXTYPEKEY==INPROCEEDINGS">In <i>Proceedings of</i></span>
+                {{- end -}}
+                <span class="if !booksubtitle">
+                    <span class="if !series">
+                        <span class="booktitle" style="font-style: italic;"></span>.
+                    </span>
+                </span>
+                <span class="if booksubtitle || series">
+                    <span class="booktitle" style="font-style: italic;"></span>
+                    <span class="if booksubtitle">
+                        <span class="if !series">
+                            (<span class="booksubtitle"></span>).
+                        </span>
+                        <span class="if series">
+                            (<span class="booksubtitle"></span>, <span class="series"></span>).
+                        </span>
+                    </span>
+                    <span class="if !booksubtitle">
+                        (<span class="series"></span>).
+                    </span>
+                </span>
+                {{ if eq .Lang "ja" }}<span class="year"></span>年.{{ end }}
+
+                <span class="if url">
+                    <a class="url" target="_blank">[url]</a>
+                </span>
+                <span class="if doi">
+                    <a class="bibtexVar" target="_blank" href="https://doi.org/+DOI+" extra="doi">[doi]</a>
+                </span>
+                <a class="bibtexVar" role="button" data-bs-toggle="collapse"
+                    href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+"
+                    extra="BIBTEXKEY" bibtexjs-css-escape>[bib]</a>
+
+                <div class="bibtexVar card collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+                    <div class="card-body p-2" onclick="getSelection().selectAllChildren(this);">
+                        <pre class="m-0"><span class="bibtexraw noread"></span></pre>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<bibtex src="publication.bib"></bibtex>
+<div id="bibtex_display"></div>

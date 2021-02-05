@@ -1,0 +1,44 @@
+baseURL: http://example.org/
+defaultContentLanguage: en
+theme: nobineko
+googleAnalytics: UA-114337124-1
+timeout: 3000
+
+languages:
+  en:
+    languageName: English
+    title: Kotaro Kikuchi
+    weight: 1
+  ja:
+    languageName: Japanese
+    title: 菊池 康太郎
+    weight: 2
+
+params:
+  fontAwesomeKit: 1fe51c925c
+
+  profile:
+    contact: kiku-koh@ruri.waseda.jp
+
+    link: 
+      - name: GitHub
+        icon: fab fa-github
+        url: https://github.com/ktrk115/
+
+      - name: Twitter
+        icon: fab fa-twitter
+        url: https://twitter.com/ktrk115/
+
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url: https://www.linkedin.com/in/ktrk115/
+
+      - name: Google Scholar
+        icon: fas fa-graduation-cap
+        url: https://scholar.google.com/citations?user=hJRiCbMAAAAJ
+
+      - name: dblp 
+        url: https://dblp.uni-trier.de/pid/191/1049.html
+
+      - name: cv
+        url: /pdf/cv.pdf

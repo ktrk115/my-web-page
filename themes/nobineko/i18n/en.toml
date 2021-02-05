@@ -1,0 +1,11 @@
+[profile]
+other = "Profile"
+
+[publication]
+other = "Publication"
+
+[pub_reviewed]
+other = "Peer-reviewed publications"
+ 
+[pub_other]
+other = "Other publications"
