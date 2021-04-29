@@ -6,6 +6,6 @@ other = "Publication"
 
 [pub_reviewed]
 other = "Peer-reviewed publications"
- 
-[pub_other]
+
+[pub_techreport]
 other = "Other publications"

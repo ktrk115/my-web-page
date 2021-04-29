@@ -7,7 +7,13 @@
             </div>
         </div>
         <div class="section techreport">
-            <h3>{{ i18n "pub_other" }}</h3>
+            <h3>{{ i18n "pub_techreport" }}</h3>
+            <div class="sort year" extra="DESC number">
+                <table class="table table-hover table-borderless"><tbody class="templates"></tbody></table>
+            </div>
+        </div>
+        <div class="section misc">
+            <h3>{{ i18n "pub_misc" }}</h3>
             <div class="sort year" extra="DESC number">
                 <table class="table table-hover table-borderless"><tbody class="templates"></tbody></table>
             </div>
@@ -25,7 +31,7 @@
             </td>
             <td>
                 {{- if eq .Lang "ja" -}}
-                <span class="author" conjunction=", "></span> 
+                <span class="author" conjunction=", "></span>
                 {{- else -}}
                 <span class="author"></span>
                 {{- end -}}.
@@ -62,15 +68,18 @@
                 <span class="if doi">
                     <a class="bibtexVar" target="_blank" href="https://doi.org/+DOI+" extra="doi">[doi]</a>
                 </span>
-                <a class="bibtexVar" role="button" data-bs-toggle="collapse"
-                    href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+"
-                    extra="BIBTEXKEY" bibtexjs-css-escape>[bib]</a>
 
-                <div class="bibtexVar card collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
-                    <div class="card-body p-2" onclick="getSelection().selectAllChildren(this);">
-                        <pre class="m-0"><span class="bibtexraw noread"></span></pre>
+                <span class="if BIBTEXTYPEKEY==INPROCEEDINGS || BIBTEXTYPEKEY==TECHREPORT">
+                    <a class="bibtexVar" role="button" data-bs-toggle="collapse"
+                        href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+"
+                        extra="BIBTEXKEY" bibtexjs-css-escape>[bib]</a>
+
+                    <div class="bibtexVar card collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+                        <div class="card-body p-2" onclick="getSelection().selectAllChildren(this);">
+                            <pre class="m-0"><span class="bibtexraw noread"></span></pre>
+                        </div>
                     </div>
-                </div>
+                </span>
             </td>
         </tr>
     </tbody>

@@ -6,3 +6,6 @@ other = "発表文献"
 
 [pub_reviewed]
 other = "国内会議"
+
+[pub_misc]
+other = "その他（メディアなど）"
