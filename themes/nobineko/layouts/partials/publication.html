@@ -1,7 +1,13 @@
 <div style="display: none;"><div class="bibtex_structure">
     <div class="sections bibtextypekey">
+        <div class="section article">
+            <h3>{{ i18n "pub_article" }}</h3>
+            <div class="sort year" extra="DESC number">
+                <table class="table table-hover table-borderless"><tbody class="templates"></tbody></table>
+            </div>
+        </div>
         <div class="section inproceedings">
-            <h3>{{ i18n "pub_reviewed" }}</h3>
+            <h3>{{ i18n "pub_inproceedings" }}</h3>
             <div class="sort year" extra="DESC number">
                 <table class="table table-hover table-borderless"><tbody class="templates"></tbody></table>
             </div>
@@ -39,11 +45,16 @@
                 <span class="title"></span>.
 
                 {{- if ne .Lang "ja" -}}
-                <span class="if BIBTEXTYPEKEY==INPROCEEDINGS">In <i>Proceedings of</i></span>
+                <span class="if BIBTEXTYPEKEY==INPROCEEDINGS"> In <i>Proceedings of</i></span>
                 {{- end -}}
                 <span class="if !booksubtitle">
                     <span class="if !series">
-                        <span class="booktitle" style="font-style: italic;"></span>.
+                        <span class="if journal">
+                            <span class="journal" style="font-style: italic;"></span>.
+                        </span>
+                        <span class="if booktitle">
+                            <span class="booktitle" style="font-style: italic;"></span>.
+                        </span>
                     </span>
                 </span>
                 <span class="if booksubtitle || series">
@@ -69,7 +80,7 @@
                     <a class="bibtexVar" target="_blank" href="https://doi.org/+DOI+" extra="doi">[doi]</a>
                 </span>
 
-                <span class="if BIBTEXTYPEKEY==INPROCEEDINGS || BIBTEXTYPEKEY==TECHREPORT">
+                <span class="if BIBTEXTYPEKEY==ARTICLE || BIBTEXTYPEKEY==INPROCEEDINGS || BIBTEXTYPEKEY==TECHREPORT">
                     <a class="bibtexVar" role="button" data-bs-toggle="collapse"
                         href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+"
                         extra="BIBTEXKEY" bibtexjs-css-escape>[bib]</a>

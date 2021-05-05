@@ -4,8 +4,14 @@ other = "プロフィール"
 [publication]
 other = "発表文献"
 
-[pub_reviewed]
+[pub_article]
+other = "論文誌"
+
+[pub_inproceedings]
 other = "国内会議"
+
+[pub_techreport]
+other = "その他の出版物"
 
 [pub_misc]
 other = "その他（メディアなど）"

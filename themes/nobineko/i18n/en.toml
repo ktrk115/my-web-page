@@ -4,8 +4,11 @@ other = "Profile"
 [publication]
 other = "Publication"
 
-[pub_reviewed]
-other = "Peer-reviewed publications"
+[pub_article]
+other = "Peer-reviewed journal papers"
+
+[pub_inproceedings]
+other = "Peer-reviewed conference papers"
 
 [pub_techreport]
 other = "Other publications"
