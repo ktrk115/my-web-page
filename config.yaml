@@ -6,16 +6,19 @@ timeout: 3000
 
 languages:
   en:
+    contentDir: content/en/
     languageName: English
     title: Kotaro Kikuchi
     weight: 1
   ja:
+    contentDir: content/ja/
     languageName: Japanese
     title: 菊池 康太郎
     weight: 2
 
 params:
   fontAwesomeKit: 1fe51c925c
+  description: Kotaro Kikuchi's author page
 
   profile:
     contact: kiku-koh@ruri.waseda.jp
@@ -35,7 +38,7 @@ params:
 
       - name: Google Scholar
         icon: fas fa-graduation-cap
-        url: https://scholar.google.com/citations?user=hJRiCbMAAAAJ
+        url: https://scholar.google.com/citations?user=hTqGOekAAAAJ
 
       - name: dblp 
         url: https://dblp.uni-trier.de/pid/191/1049.html

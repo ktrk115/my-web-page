@@ -10,8 +10,14 @@
                 {{ partial "profile.html" . }}
             </section>
 
+            {{ range .Site.Sections }}{{ if eq .Section "projects" }}
+            <section id="project" class="container rounded">
+                {{ partial "project.html" . }}
+            </section>
+            {{ end }}{{ end }}
+
             <section id="publication" class="container rounded">
-                <h2>{{ i18n "publication" }}</h2>
+                <h2 class="mb-2">{{ i18n "publication" }}</h2>
                 {{ partial "publication.html" . }}
                 {{- if eq .Lang "ja" -}}
                 <iframe src="/" style="display: none;"></iframe>

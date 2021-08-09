@@ -1,6 +1,9 @@
 [profile]
 other = "Profile"
 
+[project]
+other = "Featured Project"
+
 [publication]
 other = "Publication"
 

@@ -1,6 +1,9 @@
 [profile]
 other = "プロフィール"
 
+[project]
+other = "主なプロジェクト"
+
 [publication]
 other = "発表文献"
 
