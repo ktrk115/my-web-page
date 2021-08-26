@@ -1,0 +1,237 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+
+\usepackage{hyperref}
+\usepackage[english]{babel}
+% \usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+    \textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{enumitem}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%                        % Change font of \section command
+    \usefont{OT1}{phv}{b}{n}%        % bch-b-n: CharterBT-Bold font
+    \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Custom citation
+%%% ------------------------------------------------------------
+\usepackage[
+%   style=ieee,
+  backend=bibtex,
+  maxnames=99,
+  isbn=false,
+  doi=false,
+  url=false
+]{biblatex}
+\addbibresource{publication.bib}
+
+\usepackage{xstring}
+\usepackage[normalem]{ulem}  %for \uline
+
+\DeclareNameFormat{given-family}{
+  \ifthenelse{\equal{\namepartfamily}{Kikuchi}}
+    {\uline{\namepartgiveni\addspace\namepartfamily}}
+    {\namepartgiveni\addspace\namepartfamily}
+  \ifthenelse{\value{listcount} < \value{liststop}}
+    {\addcomma}
+    {}
+}
+
+\DeclareCiteCommand{\fullcite}
+  {\usebibmacro{prenote}}
+  {\hspace{-0.3em}\usedriver{}{\thefield{entrytype}}.}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}            % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}        % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+        \begin{center}
+        \Huge \usefont{OT1}{phv}{b}{n} #1
+        %\par \normalsize \normalfont
+      \end{center}}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+        \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+        \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+        \noindent\hangindent=2em\hangafter=0 % Indentation
+        \parbox{\spacebox}{        % Box to align text
+        \textit{#1}}               % Entry name (birth, address, etc.)
+        \hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+        \noindent\hangindent=2em\hangafter=0 % Indentation
+        \parbox{\spacebox}{        % Box to align text
+        \textit{#1}}               % Entry name (birth, address, etc.)
+        \hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\EducationEntry}[3]{
+        \noindent \textbf{#1} \hfill      % Study
+        % \colorbox{Black}{%
+        %     \parbox{7em}{%
+        %     \hfill\color{White}#2}}
+      #2 \par  % Duration
+        % \noindent \textit{#3} \par        % School
+        \begin{addmargin}[2em]{0em}
+            #3
+        \end{addmargin}}
+
+\newcommand{\WorkEntry}[2]{
+        \noindent \textbf{#1} % Project name
+        \par
+  \noindent\hangindent=1em\hangafter=0\small #2 % Description
+        \normalsize \par}
+
+\renewcommand{\labelitemi}{$\triangleright$}
+\newcommand{\etal}{\textit{et al}.}
+\newcommand{\ie}{\textit{i}.\textit{e}.}
+\newcommand{\eg}{\textit{e}.\textit{g}.}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%    \vspace*{-2em}
+%        \includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Kotaro Kikuchi}
+% \MySlogan{Curriculum Vitae}
+
+% \sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+% \PersonalEntry{Birth}{January 1, 1980}
+% \PersonalEntry{Address}{111 First St, New York}
+% \PersonalEntry{Phone}{+81 3 3203 4468}
+\PersonalEntry{Mail}{kiku-koh@ruri.waseda.jp}
+\PersonalEntry{Website}{\url{https://ktrk115.github.io/}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item[] Ph.D. in Computer Science, Waseda University \hfill 2018.4 - 2022.3 (expected)
+    \item[] M.Sc. in Computer Science, Waseda University \hfill 2016.4 - 2018.3
+    \item[] B.Sc. in Computer Science, Waseda University \hfill 2012.4 - 2016.3
+\end{itemize}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Research projects}{}
+\noindent \textbf{Computational Methods for Graphic Design Applications} \hfill 2018 - Present
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item \textbf{Latent space exploration for constrained layout generation} \\
+    We formalized the problem of controlling the output of a layout GAN
+    according to user's requirements as a constrained optimization problem on
+    the latent variables of a pre-trained GAN.
+    \item \textbf{Hierarchical layout optimization {\small with containment-aware parameterization}} \\
+    We proposed an optimization-based method for generating plausible layouts
+    for designs with visual containment between elements, such as web pages. Our
+    method consists of tree structure estimation and layout generation based on
+    the tree structure.
+    \item \textbf{Generative adversarial training for object placement} \\
+    Spatially placing an object on a background is a basic operation in graphic
+    design.  We designed a new regularization method and successfully stabilized
+    training of a GAN-based model that predicts the spatial parameters of a
+    foreground object.
+\end{itemize}
+
+\sepspace
+
+\noindent \textbf{Computer Vision $\times$ Natural Language Processing} \hfill 2015 - 2018
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item \textbf{Zero-shot image classification by exploiting dictionary definitions} \\
+    We enriched semantic representation of object classes by using dictionary
+    definitions to improve the accuracy in the zero-shot image classification task.
+    (Master's thesis)
+    \item \textbf{Video search by textual queries (TRECVID Ad-hoc Video Search)} \\
+    We developed a system that uses tens of thousands of concept detectors to
+    find videos that involve concepts specified by a textual query. Our system
+    won the competition in 2016 and 2017. (Bachelor's thesis)
+\end{itemize}
+
+%%% ------------------------------------------------------------
+\NewPart{Research Internships}{}
+
+\EducationEntry{CyberAgent AI Lab}{2018.6 - 2018.8}{To generate variations of
+banner ads, we built a system that automatically replaces a layer containing a
+person in structured visual data such as SVG or PSD, while preserving its
+semantics and pose.}
+
+\sepspace
+
+\EducationEntry{Microsoft Research Asia}{2018.9 - 2018.12}{We analyzed latest
+video retrieval models and tried to improve their accuracy by incorporating new
+attention mechanisms.}
+
+%%% ------------------------------------------------------------
+\NewPart{Honors \& Awards}{}
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item 1st place for manually-assisted setting and 2nd place for
+    fully-automatic setting in the TRECVID Ad-hoc Video Search 2017 competition
+    \item Student honorable mention in the Meeting on Image Recognition and
+    Understanding 2017
+    \item 1st place for manually-assisted setting in the TRECVID Ad-hoc Video
+    Search 2016 competition
+\end{itemize}
+
+%%% ------------------------------------------------------------
+\NewPart{Grants}{}
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item \href{http://www.leading-sn.waseda.ac.jp/en/student/scholarships/}{Scholarship of Graduate Program for Embodiment Informatics} \hfill 2016.4 - 2020.3
+\end{itemize}
+
+%%% ------------------------------------------------------------
+\NewPart{Research Activities}{}
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item Student volunteer at International Conference on Computational Linguistics \hfill 2016
+\end{itemize}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+\begin{itemize}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item \textbf{Languages}\hspace{1em} Japanese (native), English (upper-intermediate, TOEIC 800, 2016.11)
+    \item \textbf{Programming}\hspace{1em} Python (preferred), Google Cloud Platform (e.g. Cloud Dataflow), HTML, CSS, JavaScript, MySQL
+\end{itemize}
+
+%%% ------------------------------------------------------------
+\NewPart{Publications}{}
+
+\subsection*{Peer-reviewed Conference/Workshop Papers}
+\begin{enumerate}[leftmargin=2em,topsep=0.5em,itemsep=0em]
+    \item \fullcite{Kikuchi2021}
+    \item \fullcite{Kikuchi2019}
+    \item \fullcite{Hirakawa2018}
+    \item \fullcite{Ueki2018}
+    \item \fullcite{Nakatsuka2018}
+    \item \fullcite{Kikuchi2017}
+    \item \fullcite{Kikuchi2016}
+\end{enumerate}
+
+% \setcounter{enumi}{4}
+
+\end{document}
