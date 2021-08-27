@@ -5,6 +5,7 @@ rireki
 *.bcf
 *.blg
 *-blx.bib
+*.dvi
 *.fdb_latexmk
 *.fls
 *.log
