@@ -21,7 +21,7 @@
     </ul>
 
     {{ $IconLinks := where $profile.link "icon" "!=" nil }}
-    {{ $IconLinks := cond $faEnabled $profile.link slice }}
+    {{ $IconLinks := cond $faEnabled $IconLinks slice }}
 
     {{- if gt (len $IconLinks) 0 -}}
     <ul class="links icon_links">

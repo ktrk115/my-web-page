@@ -23,7 +23,7 @@ params:
   profile:
     contact: kiku-koh@ruri.waseda.jp
 
-    link: 
+    link:
       - name: GitHub
         icon: fab fa-github
         url: https://github.com/ktrk115/
@@ -40,8 +40,11 @@ params:
         icon: fas fa-graduation-cap
         url: https://scholar.google.com/citations?user=hTqGOekAAAAJ
 
-      - name: dblp 
+      - name: dblp
         url: https://dblp.uni-trier.de/pid/191/1049.html
 
       - name: cv
         url: /pdf/cv.pdf
+
+      - name: cv (ja)
+        url: /pdf/cv.ja.pdf
