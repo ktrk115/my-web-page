@@ -18,10 +18,11 @@ languages:
 
 params:
   fontAwesomeKit: 1fe51c925c
-  description: Kotaro Kikuchi's author page
+  description: Kotaro Kikuchi's page
+  lastUpdate: 2022-09-03
 
   profile:
-    contact: kiku-koh@ruri.waseda.jp
+    contact: kikuchi_kotaro_xa@cyberagent.co.jp
 
     link:
       - name: GitHub
