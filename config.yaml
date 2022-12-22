@@ -1,7 +1,7 @@
 baseURL: https://ktrk115.github.io/
 defaultContentLanguage: en
 theme: nobineko
-googleAnalytics: UA-114337124-1
+googleAnalytics: G-H6BFSWX4YM
 timeout: 3000
 
 languages:
@@ -19,7 +19,7 @@ languages:
 params:
   fontAwesomeKit: 1fe51c925c
   description: Kotaro Kikuchi's page
-  lastUpdate: 2022-09-03
+  lastUpdate: 2022-12-22
 
   profile:
     contact: kikuchi_kotaro_xa@cyberagent.co.jp

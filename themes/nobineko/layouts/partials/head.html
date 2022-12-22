@@ -2,9 +2,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {{ .Hugo.Generator }}
-	{{- template "_internal/opengraph.html" . -}}
-	{{- template "_internal/twitter_cards.html" . -}}
+    {{- template "_internal/opengraph.html" . -}} {{- template
+    "_internal/twitter_cards.html" . -}}
 
     <!-- CSS -->
     <link
@@ -13,13 +12,15 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href={{ "css/main.css" | absURL }}>
-    <link rel="stylesheet" href={{ "main.css" | absURL }}>
+    <link rel="stylesheet" href={{ "css/main.css" | absURL }}> <link
+    rel="stylesheet" href={{ "main.css" | absURL }}>
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href={{ "favicon/apple-touch-icon.png" | absURL }}>
-    <link rel="icon" type="image/png" sizes="32x32" href={{ "favicon/32x32.png" | absURL }}>
-    <link rel="icon" type="image/png" sizes="16x16" href={{ "favicon/16x16.png" | absURL }}>
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href={{
+    "favicon/apple-touch-icon.png" | absURL }}> <link rel="icon"
+    type="image/png" sizes="32x32" href={{ "favicon/32x32.png" | absURL }}>
+    <link rel="icon" type="image/png" sizes="16x16" href={{ "favicon/16x16.png"
+    | absURL }}>
 
     <title>{{ .Title }}</title>
 </head>
