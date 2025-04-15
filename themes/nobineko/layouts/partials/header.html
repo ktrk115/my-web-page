@@ -3,15 +3,8 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark px-2">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">{{ .Title }}</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -32,10 +25,10 @@
                     <a href="{{ .Permalink }}">
                         {{- if eq $.Lang .Lang -}}
                         <button type="button" class="btn btn-secondary btn-sm">
-                        {{- else -}}
-                        <button type="button" class="btn btn-outline-secondary btn-sm">
-                        {{- end -}}
-                            {{ .Language | humanize }}</button>
+                            {{- else -}}
+                            <button type="button" class="btn btn-outline-secondary btn-sm">
+                                {{- end -}}
+                                {{ .Language | humanize }}</button>
                     </a>
                     {{ end }}
                 </form>
