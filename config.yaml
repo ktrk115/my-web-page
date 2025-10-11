@@ -19,7 +19,7 @@ languages:
 params:
   fontAwesomeKit: 1fe51c925c
   description: Kotaro Kikuchi's page
-  lastUpdate: 2025-04-28
+  lastUpdate: 2025-10-12
 
   profile:
     contact: kikuchi_kotaro_xa@cyberagent.co.jp
@@ -45,4 +45,4 @@ params:
         url: https://dblp.uni-trier.de/pid/191/1049.html
 
       - name: cv
-        url: https://drive.google.com/file/d/1QrwKB6L-4HxOGz6L2JYy4H_4aPuqfzBa/view?usp=sharing
+        url: https://drive.google.com/file/d/1G88q4QQXJTVn8ta-mH0F7pZHtl0RlCZY/view?usp=sharing
