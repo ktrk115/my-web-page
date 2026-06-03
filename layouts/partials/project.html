@@ -1,0 +1,22 @@
+<h2 class="mb-2">{{ i18n "project" }}</h2>
+{{ range .Pages }}
+<div class="d-flex align-items-center py-2">
+    <div class="flex-shrink-0">
+        <a href={{ .Params.Exturl }} target="_blank">
+            <img class="thumbnail img-thumbnail" src="/thumbnail/{{ .Params.Thumbnail }}"></img>
+        </a>
+    </div>
+    <div class="flex-grow-1 ms-3">
+        <a href={{ .Params.Exturl }} target="_blank">
+            <h4>{{ .Title }}</h4>
+        </a>
+        <p>{{ .Params.Author | safeHTML }}</p>
+        <p>
+            {{ .Params.Name }}
+            {{ with .Params.minURL }}
+            [<a href="{{ . | relURL }}" target="_blank">pdf</a>]
+            {{ end }}
+        </p>
+    </div>
+</div>
+{{ end }}
